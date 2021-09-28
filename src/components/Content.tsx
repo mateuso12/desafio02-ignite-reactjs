@@ -1,7 +1,7 @@
 import { useMoviesContext } from "../hooks/useMoviesContext"
 import { MovieCard } from "./MovieCard"
 
-export function Content() {
+export default function Content() {
 const {selectedGenre, movies} = useMoviesContext()
 
  return (

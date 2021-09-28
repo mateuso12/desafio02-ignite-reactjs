@@ -1,7 +1,7 @@
 import { useMoviesContext } from "../hooks/useMoviesContext";
 import { Button } from "./Button";
 
-export function SideBar() {
+export default function SideBar() {
   const {genres, selectedGenreId, handleClickButton} = useMoviesContext();
 
   return (

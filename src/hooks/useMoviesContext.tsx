@@ -1,4 +1,4 @@
-import { ReactNode, useContext, useEffect } from "react";
+import { ReactNode, useCallback, useContext, useEffect } from "react";
 import { useState } from "react";
 import { createContext } from "react";
 import { api } from "../services/api";
@@ -64,9 +64,11 @@ export function MoviesProvider({ children }: MoviesProviderProps) {
       });
   }, [selectedGenreId]);
 
-  function handleClickButton(id: number) {
-    setSelectedGenreId(id);
-  }
+  const handleClickButton = useCallback( (id: number) => {
+    return setSelectedGenreId(id);
+  },[])
+
+  
 
   return (
     <MoviesContext.Provider
